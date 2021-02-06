@@ -14,7 +14,7 @@ namespace Black_Lotus_CSharp
 {
     public partial class Login : Form
     {
-        MySqlConnection con = new MySqlConnection(@"Data Source = localhost;port = 3306;Initial Catalog = black_lotus;User Id = root;password=''");
+        MySqlConnection con = new MySqlConnection(@"Data Source = localhost;port = 3305;Initial Catalog = wfm-cms;User Id = root;password='root'");
         int x;
         public Login()
         {
@@ -128,6 +128,11 @@ namespace Black_Lotus_CSharp
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

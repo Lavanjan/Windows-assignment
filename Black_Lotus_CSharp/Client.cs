@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace Black_Lotus_CSharp
 {
-    public partial class Product : Form
+    public partial class Client : Form
     {
-        public Product()
+        public Client()
         {
             InitializeComponent();
             
@@ -86,7 +86,7 @@ namespace Black_Lotus_CSharp
         }
         public void Populate()
         {
-            string selectQuery = "SELECT * FROM employee";
+            string selectQuery = "SELECT * FROM client";
              table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, Connection);
             adapter.Fill(table);
@@ -98,7 +98,7 @@ namespace Black_Lotus_CSharp
             bunifuMetroTextbox_id.Text = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
             bunifuMetroTextbox_name.Text = bunifuCustomDataGrid1.CurrentRow.Cells[1].Value.ToString();
             bunifuMetroTextbox_color.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
-            bunifuMetroTextbox_price.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
+            bunifuMetroTextbox_tpNo.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
             bunifuMetroTextbox_qty.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
         }
 
@@ -153,7 +153,7 @@ namespace Black_Lotus_CSharp
         private void button_addprod_Click(object sender, EventArgs e)
         {
             //Insert Query
-            string insertQuery = ("INSERT INTO employee(Name,NIC,TeleNumber,Role)VALUES('" + bunifuMetroTextbox_name.Text + "','" + bunifuMetroTextbox_color.Text + "','" + bunifuMetroTextbox_price.Text + "','" + bunifuMetroTextbox_qty.Text + "')");
+            string insertQuery = ("INSERT INTO client(Name,NIC,TeleNumber,Address)VALUES('" + bunifuMetroTextbox_name.Text + "','" + bunifuMetroTextbox_color.Text + "','" + bunifuMetroTextbox_tpNo.Text + "','" + bunifuMetroTextbox_qty.Text + "')");
             executeQuery(insertQuery);
             //System.Windows.Forms.MessageBox.Show("New Flower Added");
            // Popup pp = new Popup();
@@ -164,14 +164,14 @@ namespace Black_Lotus_CSharp
             bunifuMetroTextbox_id.Text = "";
             bunifuMetroTextbox_name.Text = "";
             bunifuMetroTextbox_color.Text = "";
-            bunifuMetroTextbox_price.Text = "";
+            bunifuMetroTextbox_tpNo.Text = "";
             bunifuMetroTextbox_qty.Text = "";
         }
 
         private void button_updateprod_Click(object sender, EventArgs e)
         {
             // Update Query
-            string updateQuery = "UPDATE employee SET Name = '" + bunifuMetroTextbox_name.Text + "',NIC = '" + bunifuMetroTextbox_color.Text + "',TeleNumber = '" + bunifuMetroTextbox_price.Text + "',Role = '" + bunifuMetroTextbox_qty.Text + "' WHERE ID = " + int.Parse(bunifuMetroTextbox_id.Text);
+            string updateQuery = "UPDATE client SET Name = '" + bunifuMetroTextbox_name.Text + "',NIC = '" + bunifuMetroTextbox_color.Text + "',TeleNumber = '" + bunifuMetroTextbox_tpNo.Text + "',Address = '" + bunifuMetroTextbox_qty.Text + "' WHERE ID = " + int.Parse(bunifuMetroTextbox_id.Text);
             executeQuery(updateQuery);
            // Popup pp = new Popup();
             //pp.ShowDialog();
@@ -182,14 +182,14 @@ namespace Black_Lotus_CSharp
             bunifuMetroTextbox_id.Text = "";
             bunifuMetroTextbox_name.Text = "";
             bunifuMetroTextbox_color.Text = "";
-            bunifuMetroTextbox_price.Text = "";
+            bunifuMetroTextbox_tpNo.Text = "";
             bunifuMetroTextbox_qty.Text = "";
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             //Delete Query
-            string deleteQuery = "DELETE FROM employee WHERE ID = " + int.Parse(bunifuMetroTextbox_id.Text);
+            string deleteQuery = "DELETE FROM client WHERE ID = " + int.Parse(bunifuMetroTextbox_id.Text);
             executeQuery(deleteQuery);
            // Popup pp = new Popup();
            // pp.ShowDialog();
@@ -199,7 +199,7 @@ namespace Black_Lotus_CSharp
             bunifuMetroTextbox_id.Text = "";
             bunifuMetroTextbox_name.Text = "";
             bunifuMetroTextbox_color.Text = "";
-            bunifuMetroTextbox_price.Text = "";
+            bunifuMetroTextbox_tpNo.Text = "";
             bunifuMetroTextbox_qty.Text = "";
         }
 
@@ -252,7 +252,7 @@ namespace Black_Lotus_CSharp
 
         }
 
-        private void label3_Click_1(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

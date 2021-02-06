@@ -36,5 +36,10 @@ namespace Black_Lotus_CSharp
             }
            
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

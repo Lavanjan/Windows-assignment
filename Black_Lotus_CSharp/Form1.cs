@@ -114,5 +114,19 @@ namespace Black_Lotus_CSharp
         {
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Client client = new Client();
+            client.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Project project = new Project();
+            project.Show();
+        }
     }
 }

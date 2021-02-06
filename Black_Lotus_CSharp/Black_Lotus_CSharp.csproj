@@ -88,6 +88,12 @@
     <Compile Include="popupNon.Designer.cs">
       <DependentUpon>popupNon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client.Designer.cs">
+      <DependentUpon>Client.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Project.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project.Designer.cs">
+      <DependentUpon>Project.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +138,9 @@
     <EmbeddedResource Include="popupNon.resx">
       <DependentUpon>popupNon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Client.resx">
+      <DependentUpon>Client.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +153,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Project.resx">
+      <DependentUpon>Project.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sale.resx">
       <DependentUpon>Sale.cs</DependentUpon>
     </EmbeddedResource>
