@@ -35,7 +35,6 @@ C:\Users\Admin\source\repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Blac
 C:\Users\Admin\source\repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Black_Lotus_CSharp.Popup.resources
 C:\Users\Admin\source\repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Black_Lotus_CSharp.Login.resources
 C:\Users\Admin\source\repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Black_Lotus_CSharp.popupNon.resources
-C:\Users\Admin\source\repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Black_Lotus_CSharp.Product.resources
 C:\Users\Admin\source\repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Black_Lotus_CSharp.Properties.Resources.resources
 C:\Users\Admin\source\repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Black_Lotus_CSharp.Sale.resources
 C:\Users\Admin\source\repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Black_Lotus_CSharp.Sales_Details.resources
@@ -46,3 +45,5 @@ C:\Users\Admin\source\repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Blac
 C:\Users\Admin\source\repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Black_Lotus_CSharp.pdb
 C:\Users\Admin\Source\Repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Black_Lotus_CSharp.Client.resources
 C:\Users\Admin\Source\Repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Black_Lotus_CSharp.Project.resources
+C:\Users\Admin\Source\Repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Black_Lotus_CSharp.Employee.resources
+C:\Users\Admin\Source\Repos\Windows-assignment\Black_Lotus_CSharp\obj\Debug\Black_Lotus_CSharp.Leave.resources

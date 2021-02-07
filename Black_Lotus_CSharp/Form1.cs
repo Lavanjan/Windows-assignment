@@ -75,7 +75,7 @@ namespace Black_Lotus_CSharp
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Product product = new Product();
+            Employee product = new Employee();
             product.Show();
         }
 
@@ -127,6 +127,18 @@ namespace Black_Lotus_CSharp
             this.Hide();
             Project project = new Project();
             project.Show();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Leave leave = new Leave();
+            leave.Show();
         }
     }
 }

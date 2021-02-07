@@ -160,7 +160,7 @@ namespace Black_Lotus_CSharp
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Product prod = new Product();
+            Employee prod = new Employee();
             prod.Show();
         }
 

@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace Black_Lotus_CSharp
 {
-    public partial class Product : Form
+    public partial class Employee : Form
     {
-        public Product()
+        public Employee()
         {
             InitializeComponent();
             
@@ -71,7 +71,7 @@ namespace Black_Lotus_CSharp
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Product product = new Product();
+            Employee product = new Employee();
             product.Show();
         }
 
@@ -255,6 +255,27 @@ namespace Black_Lotus_CSharp
         private void label3_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Client client = new Client();
+            client.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Project project = new Project();
+            project.Show();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            Leave leave = new Leave();
+            leave.Show();
         }
     }
 }

@@ -134,5 +134,10 @@ namespace Black_Lotus_CSharp
         {
 
         }
+
+        private void bunifuMetroTextbox1_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

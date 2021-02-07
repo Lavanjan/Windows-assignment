@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace Black_Lotus_CSharp
 {
-    public partial class Project : Form
+    public partial class Leave : Form
     {
-        public Project()
+        public Leave()
         {
             InitializeComponent();
             
@@ -35,7 +35,7 @@ namespace Black_Lotus_CSharp
         private void button7_Click(object sender, EventArgs e)
         {
             Connection.Open();
-            String query = "SELECT * FROM client WHERE id =" + int.Parse(bunifuMetroTextbox_clientId.Text);
+            String query = "SELECT * FROM employee WHERE id =" + int.Parse(bunifuMetroTextbox_clientId.Text);
             command = new MySqlCommand(query, Connection);
             mdr = command.ExecuteReader();
 
@@ -79,7 +79,7 @@ namespace Black_Lotus_CSharp
         public void viewdata()
         {
            
-            String select = "select * from project";
+            String select = "select * from attendance";
             MySqlCommand comd = new MySqlCommand(select, Connection);
             MySqlDataAdapter da = new MySqlDataAdapter(comd);
             DataTable dt = new DataTable();
@@ -99,7 +99,7 @@ namespace Black_Lotus_CSharp
 
         private void button_addprod_Click(object sender, EventArgs e)
         {
-            if (bunifuMetroTextbox_ClientName.Text.Length==0|| bunifuMetroTextbox_clientId.Text.Length==0|| bunifuMetroTextbox_ProjectName.Text.Length==0 || bunifuMetroTextbox3_OrgName.Text.Length==0 || bunifuMetroTextbox2_Budjet.Text.Length==0 || bunifuMetroTextbox_Duraiton.Text.Length==0 || bunifuMetroTextbox_Status.Text.Length==0)
+            if (bunifuMetroTextbox_ClientName.Text.Length==0|| bunifuMetroTextbox_clientId.Text.Length==0|| bunifuMetroTextbox_ProjectName.Text.Length==0 || bunifuMetroTextbox3_OrgName.Text.Length==0 || bunifuMetroTextbox2_Budjet.Text.Length==0)
             {
                 MessageBox.Show("Please Fill All Boxes");
             }
@@ -114,7 +114,7 @@ namespace Black_Lotus_CSharp
                 Connection.Open();
                 //if (dt.Rows.Count>=1)
                 //{
-                    string insert = "INSERT INTO `project`(`Date`, `ClientName`, `ProjectName`, `OrgName`, `Budget`, `Duration`,`Status`) VALUES ('" + DateTime.Now.ToString("yyyy:mm:dd")+ "','"+ bunifuMetroTextbox_ClientName.Text+ "','" + bunifuMetroTextbox_ProjectName.Text + "','" + bunifuMetroTextbox3_OrgName.Text + "','" + bunifuMetroTextbox2_Budjet.Text + "','" + bunifuMetroTextbox_Duraiton.Text + "','" + bunifuMetroTextbox_Status.Text + "')";
+                    string insert = "INSERT INTO `attendance`(`EmployeeName`, `Date`, `Days`, `Reason`) VALUES ('" + bunifuMetroTextbox_ClientName.Text+ "','" + bunifuMetroTextbox_ProjectName.Text + "','" + bunifuMetroTextbox3_OrgName.Text + "','" + bunifuMetroTextbox2_Budjet.Text + "')";
                     //string decress = "update product set Quantity=Quantity-'" + bunifuMetroTextbox_Status.Text + "'where ID ='"+bunifuMetroTextbox1.Text+"'";
                     MySqlCommand comd1 = new MySqlCommand(insert, Connection);
                     //MySqlCommand comd2 = new MySqlCommand(decress, Connection);
@@ -122,11 +122,11 @@ namespace Black_Lotus_CSharp
                     if (comd1.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("Successfull !!!");
-                        //comd2.ExecuteNonQuery();
-                        viewdata();
+                    //comd2.ExecuteNonQuery();
+                    viewdata();
                         bunifuMetroTextbox_clientId.Text = "";
-                        bunifuMetroTextbox_Duraiton.Text = "";
-                        bunifuMetroTextbox_Status.Text = "";
+                        //bunifuMetroTextbox_Duraiton.Text = "";
+                        //bunifuMetroTextbox_Status.Text = "";
                        // bunifuMetroTextbox1.Text = "";
                         bunifuMetroTextbox2_Budjet.Text = "";
                         bunifuMetroTextbox3_OrgName.Text = "";
@@ -173,7 +173,7 @@ namespace Black_Lotus_CSharp
         private void bunifuMetroTextbox_search_OnValueChanged(object sender, EventArgs e)
         {
             DataView view = new DataView(table);
-            view.RowFilter = string.Format("ProjectName LIKE '%{0}%'", bunifuMetroTextbox_search.Text);
+            view.RowFilter = string.Format("Name LIKE '%{0}%'", bunifuMetroTextbox_search.Text);
             bunifuCustomDataGrid1.DataSource = view;
         }
 
@@ -214,12 +214,12 @@ namespace Black_Lotus_CSharp
         private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             bunifuMetroTextbox1.Text = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
-            bunifuMetroTextbox_ClientName.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
-            bunifuMetroTextbox_ProjectName.Text = bunifuCustomDataGrid1.CurrentRow.Cells[1].Value.ToString();
+            bunifuMetroTextbox_ClientName.Text = bunifuCustomDataGrid1.CurrentRow.Cells[1].Value.ToString();
+            bunifuMetroTextbox_ProjectName.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
             bunifuMetroTextbox3_OrgName.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
             bunifuMetroTextbox2_Budjet.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
-            bunifuMetroTextbox_Duraiton.Text = bunifuCustomDataGrid1.CurrentRow.Cells[5].Value.ToString();
-            bunifuMetroTextbox_Status.Text = bunifuCustomDataGrid1.CurrentRow.Cells[6].Value.ToString();
+            //bunifuMetroTextbox_Duraiton.Text = bunifuCustomDataGrid1.CurrentRow.Cells[5].Value.ToString();
+            //bunifuMetroTextbox_Status.Text = bunifuCustomDataGrid1.CurrentRow.Cells[6].Value.ToString();
         }
         public void openConnection()
         {
@@ -239,7 +239,7 @@ namespace Black_Lotus_CSharp
 
         public void Populate()
         {
-            string selectQuery = "SELECT * FROM project";
+            string selectQuery = "SELECT * FROM attendance";
             table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, Connection);
             adapter.Fill(table);
@@ -283,7 +283,7 @@ namespace Black_Lotus_CSharp
           //  "INSERT INTO `project`(`Date`, `ClientName`, `ProjectName`, `OrgName`, `Budget`, `Duration`,`Status`) VALUES ('" + DateTime.Now.ToString("yyyy:mm:dd")+ "','"+ bunifuMetroTextbox_ClientName.Text+ "','" + bunifuMetroTextbox_ProjectName.Text + "','" + bunifuMetroTextbox3_OrgName.Text + "','" + bunifuMetroTextbox2_Budjet.Text + "','" + bunifuMetroTextbox_Duraiton.Text + "','" + bunifuMetroTextbox_Status.Text + "')";
         {
             // Update Query
-            string updateQuery = "UPDATE project SET  ClientName = '" + bunifuMetroTextbox_ClientName.Text + "',ProjectName = '" + bunifuMetroTextbox_ProjectName.Text + "',OrgName = '" + bunifuMetroTextbox3_OrgName.Text + "',Budget = '" + bunifuMetroTextbox2_Budjet.Text + "', Duration = '" + bunifuMetroTextbox_Duraiton.Text + "', Status = '" + bunifuMetroTextbox_Status.Text + "' WHERE ID = " + int.Parse(bunifuMetroTextbox1.Text);
+            string updateQuery = "UPDATE attendance SET  EmployeeName = '" + bunifuMetroTextbox_ClientName.Text + "',Date = '" + bunifuMetroTextbox_ProjectName.Text + "',Days = '" + bunifuMetroTextbox3_OrgName.Text + "',Reason = '" + bunifuMetroTextbox2_Budjet.Text + "' WHERE ID = " + int.Parse(bunifuMetroTextbox1.Text);
             executeQuery(updateQuery);
             // Popup pp = new Popup();
             //pp.ShowDialog();
@@ -296,8 +296,8 @@ namespace Black_Lotus_CSharp
             bunifuMetroTextbox_ProjectName.Text = "";
             bunifuMetroTextbox3_OrgName.Text = "";
             bunifuMetroTextbox2_Budjet.Text = "";
-            bunifuMetroTextbox_Duraiton.Text = "";
-            bunifuMetroTextbox_Status.Text = "";
+            //bunifuMetroTextbox_Duraiton.Text = "";
+            //bunifuMetroTextbox_Status.Text = "";
         }
 
         private void button2_Click_1(object sender, EventArgs e)
